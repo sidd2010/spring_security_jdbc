@@ -1,0 +1,29 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.5.2' // Update the version here
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE' // This version manages Spring Boot 2.5.x dependencies
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.5.2' // Update the version here
+	implementation 'org.springframework.boot:spring-boot-starter-security:2.5.2' // Update the version here
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	runtimeOnly 'com.h2database:h2'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.2' // Update the version here
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.2' // Update the version here
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
